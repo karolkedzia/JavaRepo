@@ -27,17 +27,17 @@ public class CalculatorLoops {
             if (operator.equals("+")) {
                 System.out.println("Your result is: " + (x + y));
 
-            }else if (operator.equals("-")) {
-                System.out.println("Your result is: " + (x - y));
+                }else if (operator.equals("-")) {
+                    System.out.println("Your result is: " + (x - y));
 
-            }else if (operator.equals("*")) {
-                System.out.println("Your result is: " + (x * y));
+                }else if (operator.equals("*")) {
+                    System.out.println("Your result is: " + (x * y));
 
-            }else if (operator.equals("/")) {
-                System.out.println("Your result is: " + (x / y));
+                }else if (operator.equals("/")) {
+                    System.out.println("Your result is: " + (x / y));
 
-            } else {
-                System.out.println("You entered the wrong operator. End the program and restart it.");
+                } else {
+                    System.out.println("You entered the wrong operator. End the program and restart it.");
 
             }
             //End of calc program
