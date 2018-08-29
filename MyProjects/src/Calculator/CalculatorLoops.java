@@ -1,5 +1,6 @@
 package Calculator;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CalculatorLoops {
@@ -9,38 +10,45 @@ public class CalculatorLoops {
         Scanner run = new Scanner(System.in);
 
         do {
+            try {
+                //Start of calc program
+                int x, y;
+                String operator;
+                Scanner scannerConstructor = new Scanner(System.in);
 
-            //Start of calc program
-            double x, y;
-            Scanner numb = new Scanner(System.in);
 
-            String operator;
-            Scanner op = new Scanner(System.in);
+                System.out.println("Enter the first number:");
+                x = scannerConstructor.nextInt();
 
-            System.out.println("Enter the first number:");
-            x = numb.nextDouble();
+                System.out.println("Enter the operator: '+', '-', '*' or '/'");
+                operator = scannerConstructor.next();
 
-            System.out.println("Enter the operator: '+', '-', '*' or '/'");
-            operator = op.next();
+                System.out.println("Enter the second number:");
+                y = scannerConstructor.nextInt();
 
-            System.out.println("Enter the second number:");
-            y = numb.nextDouble();
 
-            if (operator.equals("+")) {
-                System.out.println("Your result is: " + (x + y));
+                if (operator.equals("+")) {
+                    System.out.println("Your result is: " + (x + y));
 
-                }else if (operator.equals("-")) {
+                } else if (operator.equals("-")) {
                     System.out.println("Your result is: " + (x - y));
 
-                }else if (operator.equals("*")) {
+                } else if (operator.equals("*")) {
                     System.out.println("Your result is: " + (x * y));
 
-                }else if (operator.equals("/")) {
-                    System.out.println("Your result is: " + (x / y));
-
+                } else if (operator.equals("/")) {
+                    try {
+                        System.out.println("Your result is: " + (x / y));
+                    } catch (ArithmeticException exception) {
+                        System.out.println("You cannot divide by \"0\"");
+                        System.out.println(exception.toString());
+                    }
                 } else {
                     System.out.println("You entered the wrong operator. End the program and restart it.");
-
+                }
+            }catch (InputMismatchException exception) {
+                System.out.println("You should enter a number");
+                System.out.println(exception.toString());
             }
             //End of calc program
 

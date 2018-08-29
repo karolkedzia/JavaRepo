@@ -1,5 +1,6 @@
 package Calculator;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CalculatorScanner {
@@ -8,53 +9,59 @@ public class CalculatorScanner {
         String runAgain = "";
         Scanner run = new Scanner(System.in);
 
-        do {
+            do {
+                try {
+                    //Start of calc program
+                    int x, y;
+                    String operator;
+                    Scanner scannerConstructor = new Scanner(System.in);
 
-            //Start of calc program
-            double x, y;
-            Scanner number = new Scanner(System.in);
+                    System.out.println("Enter the first number:");
+                    x = scannerConstructor.nextInt();
 
-            String operator;
-            Scanner op = new Scanner(System.in);
+                    System.out.println("Enter the operator: '+', '-', '*' or '/'");
+                    operator = scannerConstructor.next();
 
-            System.out.println("Enter the first number:");
-            x = number.nextDouble();
+                    System.out.println("Enter the second number:");
+                    y = scannerConstructor.nextInt();
 
-            System.out.println("Enter the operator: '+', '-', '*' or '/'");
-            operator = op.next();
+                    switch (operator) {
+                        case "+":
+                            System.out.println("Your result is: " + (x + y));
+                            break;
 
-            System.out.println("Enter the second number:");
-            y = number.nextDouble();
+                        case "-":
+                            System.out.println("Your result is: " + (x - y));
+                            break;
 
-            switch(operator) {
-                case "+":
-                    System.out.println("Your result is: " + (x + y));
-                    break;
+                        case "*":
+                            System.out.println("Your result is: " + (x * y));
+                            break;
 
-                case "-":
-                    System.out.println("Your result is: " + (x - y));
-                    break;
+                        case "/":
+                            try {
+                                System.out.println("Your result is: " + (x / y));
+                            } catch (ArithmeticException exception) {
+                                System.out.println("You cannot divide by \"0\"");
+                                System.out.println(exception.toString());
+                            } finally {
+                                break;
+                            }
+                        default:
+                            System.out.println("You entered the wrong operator. End the program and restart it.");
 
-                case "*":
-                    System.out.println("Your result is: " + (x * y));
-                    break;
+                    }
+                }catch (InputMismatchException exception) {
+                    System.out.println("You should enter a number");
+                    System.out.println(exception.toString());
+                }
+                //End of calc program
 
-                case "/":
-                    System.out.println("Your result is: " + (x / y));
-                    break;
+                System.out.println("Choose 'yes' if you want to start the calculator again. Press any key to finish.");
+                runAgain = run.next();
 
-                default:
-                    System.out.println("You entered the wrong operator. End the program and restart it.");
+                } while (runAgain.equalsIgnoreCase("yes")) ;
+                System.out.println("Thanks for using my calculator. See you again!");
 
-            }
-            //End of calc program
-
-
-            System.out.println("Choose 'yes' if you want to start the calculator again. Press any key to finish.");
-            runAgain = run.next();
-
-        } while(runAgain.equalsIgnoreCase("yes"));
-        System.out.println("Thanks for using my calculator. See you again!");
     }
-
 }
