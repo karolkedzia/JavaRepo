@@ -15,24 +15,24 @@ public class CalculatorMethods{
                 systemScanner();
                 try {
 
-                    System.out.println("Welcome to the Calc Program v1.1.2. Choose one of the available options.");
+                    System.out.println("Welcome to the Calc Program v1.1.4. Choose one of the available options.");
                     System.out.println("1.Addition");
                     System.out.println("2.Subtraction");
                     System.out.println("3.Multiplication");
                     System.out.println("4.Division");
 
-                    int choice = systemScanner().nextInt();
+                    int input = systemScanner().nextInt();
 
-                    if (choice==1) {
+                    if (input==1) {
                         addition();
                     }
-                    else if (choice==2) {
+                    else if (input==2) {
                         subtraction();
                     }
-                    else if (choice==3) {
+                    else if (input==3) {
                         multiplication();
                     }
-                    else if (choice==4) {
+                    else if (input==4) {
                         division();
                     }
                     else {
