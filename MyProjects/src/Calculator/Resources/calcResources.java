@@ -3,19 +3,22 @@ package Calculator.Resources;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static Calculator.Resources.calcResources.multiplication;
-
 public class calcResources {
+
+    public static Scanner systemScanner() {
+        Scanner sysScan = new Scanner(System.in);
+        return sysScan;
+    }
+
     public static void addition(){
         int x, y;
-        Scanner addition = new Scanner(System.in);
 
         try {
             System.out.println("Enter the first number:");
-            x = addition.nextInt();
+            x = systemScanner().nextInt();
 
             System.out.println("Enter the second number:");
-            y = addition.nextInt();
+            y = systemScanner().nextInt();
 
             System.out.println("Your result is: " + (x + y));
         }catch (InputMismatchException exception) {
@@ -26,14 +29,12 @@ public class calcResources {
 
     public static void subtraction(){
         int x, y;
-        Scanner subtraction = new Scanner(System.in);
-
         try {
             System.out.println("Enter the first number:");
-            x = subtraction.nextInt();
+            x = systemScanner().nextInt();
 
             System.out.println("Enter the second number:");
-            y = subtraction.nextInt();
+            y = systemScanner().nextInt();
 
             System.out.println("Your result is: " + (x - y));
         }catch (InputMismatchException exception) {
@@ -44,14 +45,12 @@ public class calcResources {
 
     public static void multiplication(){
         int x, y;
-        Scanner multiplication = new Scanner(System.in);
-
         try {
             System.out.println("Enter the first number:");
-            x = multiplication.nextInt();
+            x = systemScanner().nextInt();
 
             System.out.println("Enter the second number:");
-            y = multiplication.nextInt();
+            y = systemScanner().nextInt();
 
             System.out.println("Your result is: " + (x * y));
         }catch (InputMismatchException exception) {
@@ -62,13 +61,12 @@ public class calcResources {
 
     public static void division() {
         int x, y;
-        Scanner division = new Scanner(System.in);
         try {
             System.out.println("Enter the first number:");
-            x = division.nextInt();
+            x = systemScanner().nextInt();
 
             System.out.println("Enter the second number:");
-            y = division.nextInt();
+            y = systemScanner().nextInt();
 
             System.out.println("Your result is: " + (x / y));
         }catch (ArithmeticException exception) {

@@ -1,29 +1,27 @@
 package Calculator;
 
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
 import static Calculator.Resources.calcResources.*;
+import static Calculator.Resources.calcResources.systemScanner;
 
 public class CalculatorMethods{
 
     public static void main(String[] args) {
 
         String runAgain = "";
-        Scanner run = new Scanner(System.in);
 
         do {
-                Scanner systemScan = new Scanner(System.in);
-
+                systemScanner();
                 try {
 
-                    System.out.println("Welcome to the calc program. Choose one of the available options.");
+                    System.out.println("Welcome to the Calc Program v1.1.2. Choose one of the available options.");
                     System.out.println("1.Addition");
                     System.out.println("2.Subtraction");
                     System.out.println("3.Multiplication");
                     System.out.println("4.Division");
 
-                    int choice = systemScan.nextInt();
+                    int choice = systemScanner().nextInt();
 
                     if (choice==1) {
                         addition();
@@ -47,10 +45,10 @@ public class CalculatorMethods{
                 }
 
                 System.out.println("Choose 'yes' if you want to start the calculator again. Press any key to finish.");
-                runAgain = run.next();
+                runAgain = systemScanner().next();
 
         } while (runAgain.equalsIgnoreCase("yes")) ;
-                System.out.println("Thanks for using my calculator. See you again!");
+                System.out.println("Thanks for using Calc program. See you again!");
     }
 
 }
