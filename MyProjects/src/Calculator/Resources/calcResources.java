@@ -28,7 +28,6 @@ public class calcResources {
     private static void loops() {
         int input = systemScanner().nextInt();
 
-        try {
             if (input == 1) {
                 addition();
             } else if (input == 2) {
@@ -40,10 +39,6 @@ public class calcResources {
             } else {
                 System.out.println("You have not made any choice. You should enter a number between 1-4. End the program and try again.");
             }
-        } catch (InputMismatchException exception) {
-            System.out.println("You should enter a number between 1-4. End of the program and try again.");
-            System.out.println(exception.toString());
-        }
     }
 
     private static void addition(){
