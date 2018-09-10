@@ -19,5 +19,4 @@ public class CalculatorMethods{
         } while (runAgain.equalsIgnoreCase("yes")) ;
                 System.out.println("Thanks for using Calc program. See you again!");
     }
-
 }

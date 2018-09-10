@@ -5,12 +5,12 @@ import java.util.Scanner;
 
 public class calcResources {
 
-    public static Scanner systemScanner() {
+    public static Scanner systemScanner(){
         Scanner sysScan = new Scanner(System.in);
         return sysScan;
     }
 
-    public static void menu() {
+    public static void menu(){
         try {
             System.out.println("Welcome to the Calc Program v1.1.4. Choose one of the available options.");
             System.out.println("1.Addition");
@@ -18,29 +18,28 @@ public class calcResources {
             System.out.println("3.Multiplication");
             System.out.println("4.Division");
             loops();
-        } catch (InputMismatchException exception) {
+        } catch(InputMismatchException exception) {
             System.out.println("You should enter a number between 1-4. End of the program and try again.");
             System.out.println(exception.toString());
-
         }
     }
 
-    private static void loops() {
+    private static void loops(){
         int input = systemScanner().nextInt();
 
-            if (input == 1) {
-                addition();
-            } else if (input == 2) {
-                subtraction();
-            } else if (input == 3) {
-                multiplication();
-            } else if (input == 4) {
-                division();
-            } else {
-                System.out.println("You have not made any choice. You should enter a number between 1-4. End the program and try again.");
-            }
+        if (input == 1){
+            addition();
+        } else if (input == 2){
+            subtraction();
+        } else if (input == 3){
+            multiplication();
+        } else if (input == 4){
+            division();
+        } else{
+            System.out.println("You have not made any choice. You should enter a number between 1-4. End the program and try again.");
+        }
     }
-
+K
     private static void addition(){
         int x, y;
 
@@ -52,7 +51,7 @@ public class calcResources {
             y = systemScanner().nextInt();
 
             System.out.println("Your result is: " + (x + y));
-        }catch (InputMismatchException exception) {
+        } catch (InputMismatchException exception) {
             System.out.println("You should enter a number");
             System.out.println(exception.toString());
         }
@@ -68,7 +67,7 @@ public class calcResources {
             y = systemScanner().nextInt();
 
             System.out.println("Your result is: " + (x - y));
-        }catch (InputMismatchException exception) {
+        } catch (InputMismatchException exception) {
             System.out.println("You should enter a number");
             System.out.println(exception.toString());
         }
@@ -84,7 +83,7 @@ public class calcResources {
             y = systemScanner().nextInt();
 
             System.out.println("Your result is: " + (x * y));
-        }catch (InputMismatchException exception) {
+        } catch (InputMismatchException exception) {
             System.out.println("You should enter a number");
             System.out.println(exception.toString());
         }
@@ -100,10 +99,10 @@ public class calcResources {
             y = systemScanner().nextInt();
 
             System.out.println("Your result is: " + (x / y));
-        }catch (ArithmeticException exception) {
+        } catch (ArithmeticException exception) {
             System.out.println("You cannot divide by \"0\"");
             System.out.println(exception.toString());
-        }catch (InputMismatchException exception) {
+        } catch (InputMismatchException exception) {
             System.out.println("You should enter a number");
             System.out.println(exception.toString());
         }
