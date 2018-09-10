@@ -39,7 +39,6 @@ public class calcResources {
             System.out.println("You have not made any choice. You should enter a number between 1-4. End the program and try again.");
         }
     }
-K
     private static void addition(){
         int x, y;
 
